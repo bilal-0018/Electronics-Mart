@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Mart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="EM.png">
+    <link rel="icon" href="images/EM.png" />
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .animate {
+            position: relative;
+            display: inline-block;
+        }
+
+        .animate:hover {
+            position: relative;
+        }
+
+        .animate:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: orange;
+            transition: width 0.3s ease;
+        }
+
+        .animate:hover:before {
+            width: 100%;
+        }
+
+        .animat {
+            position: relative;
+            display: inline-block;
+        }
+
+        .animat:hover {
+            position: relative;
+        }
+
+        .animat:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .animat:hover:before {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        .bga {
+            background-image: url('bg2.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .A {
+            background-color: rgb(41, 37, 96);
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: orange;
+            transition: 0.4s ease;
+        }
+
+        .nav-link:active {
+            color: orange;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .navbar-brand:hover {
+            color: orange;
+            transition: 0.4s ease;
+        }
+
+        .navbar-brand:active {
+            color: orange;
+        }
+
+        marquee a,
+        marquee a:hover,
+        marquee a:visited,
+        marquee a:active {
+            color: gray !important;
+            text-decoration: none;
+        }
+
+        .e,
+        .m {
+            font-size: 3rem;
+            color: orange;
+        }
+
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            list-style: none;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .hi {
+            padding-top: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-bottom: 2%;
+            background: rgb(253, 176, 61);
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hv {
+            text-align: center;
+            padding: 3%;
+            font-size: 250%;
+        }
+
+        .col {
+            border: 2px solid red;
+            border-radius: 20%;
+        }
+
+        .gap-right {
+            margin-right: 10px;
+        }
+
+        .icon {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .ico {
+            color: black !important;
+            text-decoration: none;
+        }
+
+        .ico:hover {
+            color: orange;
+            transition: 0.4s ease;
+        }
+
+        .k1 {
+            text-decoration: none;
+            color: gray;
+        }
+
+        .wai {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .ni {
+            background: rgb(41, 37, 96);
+            color: white;
+            font-weight: 650;
+            cursor: pointer;
+        }
+
+        .ni:hover {
+            background-color: orange;
+            transition: 0.4s ease-in;
+        }
+
+        .nii {
+            color: #000;
+            font-weight: 500;
+            font-size: large;
+        }
+
+        .he {
+            font-weight: lighter;
+        }
+
+        .game img {
+            width: 100%;
+        }
+
+        .bac {
+            background-color: rgb(253, 176, 61);
+        }
+
+        .last {
+            text-decoration: none;
+            color: rgb(182, 190, 186);
+        }
+
+        .last:hover {
+            color: rgb(253, 176, 61);
+            transition: 0.1s ease-in;
+        }
+
+        .face {
+            background: rgb(103, 136, 206);
+            padding: 4%;
+            border-radius: 50%;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .twit {
+            background: rgb(0, 172, 238);
+            padding: 4%;
+            border-radius: 50%;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .goog {
+            background: rgb(221, 75, 57);
+            padding: 4%;
+            border-radius: 45%;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .face:hover,
+        .twit:hover,
+        .goog:hover {
+            opacity: 50%;
+            transition: 0.2s ease-in-out;
+        }
+
+        .bilal,
+        .bilal a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(158, 158, 158);
+        }
+
+        .bilal a:hover {
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        .ico {
+            color: black;
+            text-decoration: none;
+        }
+
+        .bi {
+            font-weight: bold;
+        }
+
+        #coming-soon-popup {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-30px);
+            z-index: 9999;
+            background: linear-gradient(135deg, #29256b, #1a1660);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            min-width: 260px;
+            max-width: 90vw;
+            opacity: 0;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            pointer-events: none;
+        }
+
+        #coming-soon-popup.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        #coming-soon-popup .cs-icon {
+            background: #fdb03d;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        #coming-soon-popup .cs-text span {
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Coming Soon Popup -->
+    <div id="coming-soon-popup">
+        <div class="cs-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="cs-text">
+            <strong>Coming Soon!</strong>
+            <span>This product page is under development.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm fixed-top A">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav im me-auto mb-2 mb-lg-0">
+                    <p>
+                        <a class="navbar-brand me-5 animat" href="index.html"><span class="e">E</span>lectronics
+                            <span class="m">M</span>art
+                        </a>
+                    </p>
+                    <li class="nav-item ms-5 ps-5 mt-4 py-2">
+                        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown mt-4 py-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            CATEGORIES
+                        </a>
+                        <ul class="dropdown-menu"
+                            style="width: 300px; padding: 10px; justify-content:center; align-items:center;">
+                            <div class="row">
+                                <h5 class="ms-2 my-3" style="color:rgb(253, 176, 61);">Mobiles,Computers</h5>
+                                <ul class="list-unstyled ps-2">
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="mobile.html">Mobile Phones</a></li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="case.html">Cases / Covers</a></li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="screen.html">Screen Protectors</a></li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="tablet.html">Tablets</a></li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="wearable.html">Wearable Devices</a></li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="smart.html">Smart Home</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="mb-2 ms-2"><a style="font-size: 16px; font-weight: 600;"
+                                            class="ico animate" href="products.html">Product View</a></li>
+                                    <li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item mt-4 py-2">
+                        <a class="nav-link" href="about.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item mt-4 py-2">
+                        <a class="nav-link" href="arrivals.html">NEW ARRIVALS</a>
+                    </li>
+                    <li class="nav-item mt-4 py-2">
+                        <a class="nav-link" href="contact.html">CONTACT US</a>
+                    </li>
+                    <li class="nav-item mt-4 py-2">
+                        <a class="nav-link" href="checkout.html">CHECKOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid"
+        style="background-image: url('banner2.png');margin-top: 5%;background-position: center; background-size: cover;background-repeat: no-repeat;">
+        <div class="container" style="padding-top: 5.5%; padding-bottom: 3.5%">
+            <p style="font-size: 22px; font-weight: 600">
+                The Best <span style="font-size: 34px"> Deals </span>on Electronics
+            </p>
+            <p style="font-size: 14px; font-weight: 700">
+                <a href="index.html" style="text-decoration: none; color: rgb(253, 176, 61);">HOME</a><i
+                    style="font-size: x-small" class="fa-solid fa-greater-than mx-3"></i>CONTACT US
+            </p>
+        </div>
+    </div>
+    <div class="bga">
+        <div class="bg-light">
+            <div class="container hv bg-light">
+                Our <span style="font-weight: bold;">New Products</span>
+            </div>
+
+            <div class="container mt-4 bg-light">
+                <div class="row">
+                    <div class="col-3 ms-5 rounded"
+                        style="background-color: rgb(245, 245, 245); padding: 10px; margin-right: 1%;">
+                        <h5 style="font-weight: bold;" class="mt-3 ms-3">
+                            CUSTOMER REVIEW
+                        </h5>
+                        <div class="ms-3">
+                            <div>
+                                <a class="icon" href="#">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="ms-3">5.0</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="icon" href="#">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="ms-3">4.0</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="icon" href="#">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                    <span class="ms-3">3.5</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="icon" href="#">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="ms-3">3.0</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="icon" href="#">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                    <span class="ms-3">2.5</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="my-3" style="font-weight: bold;">
+                                PRICE
+                            </h5>
+                            <div>
+                                <div><a class="ico" href="#">Under $1,000</a></div>
+                                <div><a class="ico" href="#">$1,000 - $5,000</a></div>
+                                <div><a class="ico" href="#">$5,000 - $10,000</a></div>
+                                <div><a class="ico" href="#">$10,000 - $20,000</a></div>
+                                <div><a class="ico" href="#">$20,000 $30,000</a></div>
+                                <div><a class="ico" href="#">Over $30,000</a></div>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="mt-3" style="font-weight: bold;">
+                                DISCOUNT
+                            </h5>
+                        </div>
+                        <div class="ms-3">
+                            <div>
+                                <input type="checkbox"><span class="ms-2">5% or More</span>
+                            </div>
+                            <div>
+                                <input type="checkbox"><span class="ms-2">10% or More</span>
+                            </div>
+                            <div>
+                                <input type="checkbox"><span class="ms-2">20% or More</span>
+                            </div>
+                            <div>
+                                <input type="checkbox"><span class="ms-2">30% or More</span>
+                            </div>
+                            <div>
+                                <input type="checkbox"><span class="ms-2">50% or More</span>
+                            </div>
+                            <div>
+                                <input type="checkbox"><span class="ms-2">60% or More</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 mb-5">
+
+                        <div>
+                            <div class="row">
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img class="mt-5" src="k2.png" style="width: 65%; height: 65%;" alt="" onclick="showComingSoon();">
+                                                <p class="mt-4 nii">Refrigrator S1</p>
+                                                <p class="nii">$1199.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$1299.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">
+                                                        Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img class="mt-5" src="m2.png" style="width: 65%; height: 65%;" alt="" onclick="showComingSoon();">
+                                                <p class="mt-5 nii">Refrigrator S2</p>
+                                                <p class="nii">$1399.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$1499.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img src="m7.png" alt="" onclick="showComingSoon();">
+                                                <p class="mt-1 nii">Air Conditioner</p>
+                                                <p class="nii">$1599.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$1699.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row mt-5">
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img src="m8.png" alt="" onclick="showComingSoon();">
+                                                <p class="mt-1 nii">Wash Machine</p>
+                                                <p class="nii">$1499.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$1599.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img src="m9.png" alt="" onclick="showComingSoon();">
+                                                <p class="mt-1 nii">Water Filter</p>
+                                                <p class="nii">$1399.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$1499.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3 ms-5 wai border rounded">
+                                    <a href="#">
+                                        <div>
+                                            <div class="p-4 game">
+                                                <img src="k12.png" alt="" onclick="showComingSoon();">
+                                                <p class="mt-4 nii">Tower AC</p>
+                                                <p class="nii">$1999.00 <span class="he ms-2"
+                                                        style="text-decoration: line-through; font-size: small;">$2099.00</span>
+                                                </p>
+                                                <div class="ni border rounded mt-3 p-2"><a href="#" onclick="showComingSoon(); return false;" class=" p-2 "
+                                                        style="color: white;">Show
+                                                        detail</a></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+            <div class="row mb-5">
+                <div class="col-5 p-2 mb-5 mt-5 bg-light rounded">
+                    <div class="p-5">
+                        <div class="row">
+                            <div class="col-7 mt-5">
+                                <h6>
+                                    New Collections, New Trendy
+                                </h6>
+                                <h4>
+                                    Smart Watches
+                                </h4>
+                                <p>
+                                    Sale up to 25% off all in store
+                                </p>
+                            </div>
+                            <div class="col-5">
+                                <img src="off1.png" style="width: 85%;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2"></div>
+
+                <div class="col-5 p-2 mb-5 mt-5 bg-light rounded">
+                    <div class="p-5">
+                        <div class="row">
+                            <div class="col-7 mt-5">
+                                <h6>
+                                    Top Brands, lowest Prices
+                                </h6>
+                                <h4>
+                                    Smart Phones
+                                </h4>
+                                <p>
+                                    Free shipping order over $100
+                                </p>
+                            </div>
+                            <div class="col-5">
+                                <img src="off2.png" style="width: 85%;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="color: black; ">
+        <p style="font-weight: 700; font-size: 22px;">Electronics :</p>
+        <p style="font-weight: lighter;">If you're considering a new laptop, looking for a powerful new car stereo or
+            shopping for a new HDTV, we make it
+            easy to find exactly what you need at a price you can afford. We offer Every Day Low Prices on TVs, laptops,
+            cell
+            phones, tablets and iPads, video games, desktop computers, cameras and camcorders, audio, video and more.
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="row mt-5 mb-5">
+                    <div class="col-2">
+                        <i class="mt-3 fa-solid fa-dolly " style="font-size: 2.5rem; color: rgb(253, 176, 61);"></i>
+                    </div>
+                    <div class="col-9">
+                        <p style="font-weight: 750; font-size: 22px;">Free Shipping</p>
+                        <p style="margin-top: -5%; font-weight: lighter;">on orders over $100</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="row mt-5 mb-5">
+                    <div class="col-2">
+                        <i class="mt-2 fa-solid fa-truck-fast" style="font-size: 2.5rem; color: rgb(253, 176, 61);"></i>
+                    </div>
+                    <div class="col-9">
+                        <p style="font-weight: 750; font-size: 22px;">Fast Delivery</p>
+                        <p style="margin-top: -5%; font-weight: lighter;">World Wide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="row mt-5 mb-5">
+                    <div class="col-2">
+                        <i class="mt-2 fa-regular fa-thumbs-up"
+                            style="font-size: 2.7rem; color: rgb(253, 176, 61);"></i>
+                    </div>
+                    <div class="col-9">
+                        <p style="font-weight: 750; font-size: 22px;">Big Choice</p>
+                        <p style="margin-top: -5%; font-weight: lighter;">of Products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: rgb(6, 14, 31); color: white;">
+        <div class="container">
+            <div class="row pb-4">
+                <div class="col-3 mt-5">
+                    <p style="font-size: 22px; font-weight: 750;">Categories</p>
+                    <div>
+                        <p><a href="mobile.html" class="last">Mobiles Phones</a></p>
+                        <p><a class="last" href="case.html">Cases / Covers</a></p>
+                        <p><a class="last" href="screen.html">Screen Protectors</a></p>
+                        <p><a class="last" href="tablet.html">Tablets</a></p>
+                        <p><a class="last" href="wearable.html">Wearable Devices</a></p>
+                        <p><a class="last" href="Smart.html">Smart Home</a></p>
+                    </div>
+                </div>
+                <div class="col-3 mt-5">
+                    <p style="font-size: 22px; font-weight: 750;">Quick Links</p>
+                    <div>
+                        <p><a class="last" href="contact.html">About Us</a></p>
+                        <p><a class="last" href="contact.html">Contact Us</a></p>
+                        <p><a class="last" href="contact.html">Help</a></p>
+                        <p><a class="last" href="contact.html">Faqs</a></p>
+                        <p><a class="last" href="contact.html">Terms of use</a></p>
+                        <p><a class="last" href="contact.html">Privacy Policy</a></p>
+                    </div>
+                </div>
+                <div class="col-3 mt-5">
+                    <p style="font-size: 22px; font-weight: 750;">Get in Touch</p>
+                    <div class="text-decoration-none">
+                        <p><a class="last"><i class="fa-solid fa-location-pin me-2 text-light"></i>Mkc, 123 Sebastian,
+                                USA.</a></p>
+                        <p><a class="last"><i class="fa-solid fa-mobile me-2 text-light"></i>12 2345 6790</a></p>
+                        <p><a class="last"><i class="fa-solid fa-phone-flip me-2 text-light"></i>+11 3672 1890</a></p>
+                        <p><a class="last"><i class="fa-solid fa-envelope-open me-2 text-light"></i>mail
+                                1@example.com</a></p>
+                        <p><a class="last"><i class="fa-solid fa-envelope-open me-2 text-light"></i>mail
+                                2@example.com</a></p>
+                    </div>
+                </div>
+                <div class="col-3 mt-5">
+                    <p style="font-size: 22px; font-weight: 750;">Newsletter</p>
+                    <a href="#" class="text-decoration-none">
+                        <p class="last">Free Delivery on your first order!</p>
+                    </a>
+                    <p style="font-size: 22px; font-weight: 750;">Follow Us on</p>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook face"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter ms-4 twit"></i></a>
+                    <a href="https://www.gmail.com/"><i class="fa-brands fa-google-plus-g ms-4 goog"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container mb-5">
+            <p class="mt-5" style="font-size: 20px; font-weight: 600;">Payment Method</p>
+            <img src="pay1.png" alt="">
+            <img src="pay3.png" alt="">
+            <img src="pay4.png" alt="">
+            <img src="pay5.png" alt="">
+            <img src="pay6.png" alt="">
+            <img src="pay7.png" alt="">
+            <img src="pay8.png" alt="">
+            <img src="pay9.png" alt="">
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 pb-4" style="background-color: rgb(6, 14, 31);">
+        <div class="container">
+            <p class="bilal">© Electronics Mart. All rights reserved | Design by <span class="ms-1 bi"><a
+                        href="term.html">M BILAL AHMED</a></span>
+            </p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+        integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let csTimer = null;
+        function showComingSoon() {
+            const popup = document.getElementById('coming-soon-popup');
+            popup.style.display = 'flex';
+            popup.getBoundingClientRect(); // force reflow
+            popup.classList.add('show');
+            clearTimeout(csTimer);
+            csTimer = setTimeout(() => {
+                popup.classList.remove('show');
+                setTimeout(() => { popup.style.display = 'none'; }, 350);
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
