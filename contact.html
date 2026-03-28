@@ -209,6 +209,55 @@
         .bi {
             font-weight: bold;
         }
+
+        #contact-sent-popup {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-30px);
+            z-index: 9999;
+            background: linear-gradient(135deg, #29256b, #1a1660);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            min-width: 260px;
+            max-width: 90vw;
+            opacity: 0;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            pointer-events: none;
+            display: flex;
+        }
+
+        #contact-sent-popup.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        #contact-sent-popup .cs-icon {
+            background: #fdb03d;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+            color: #1a1660;
+        }
+
+        #contact-sent-popup .cs-text span {
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+        }
     </style>
 </head>
 
@@ -366,13 +415,21 @@
                         <textarea class="form-control p-3" id="message" placeholder="Type your message here"></textarea>
                     </div>
                     <div class="mt-5">
-                        <a class="hii rounded" href="#">SEND MESSAGE</a>
+                        <button id="sendMessageBtn" type="button" class="hii rounded">SEND MESSAGE</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
+    
+    <div id="contact-sent-popup">
+        <div class="cs-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="cs-text">
+            <strong>Message Sent!</strong>
+            <span>Thank you for contacting us. We will reply shortly.</span>
+        </div>
+    </div>
+    
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8636.55743254186!2d70.3191006!3d28.405426200000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1757673532187!5m2!1sen!2s"
         height="500" width="100%" style="border:0;" allowfullscreen="" loading="lazy" allowfullscreen="" loading="lazy"
@@ -502,6 +559,30 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sendMessageBtn = document.getElementById('sendMessageBtn');
+            const popup = document.getElementById('contact-sent-popup');
+            let popupTimer = null;
+
+            if (sendMessageBtn && popup) {
+                sendMessageBtn.addEventListener('click', function () {
+                    popup.style.display = 'flex';
+                    popup.getBoundingClientRect();
+                    popup.classList.add('show');
+
+                    clearTimeout(popupTimer);
+                    popupTimer = setTimeout(function () {
+                        popup.classList.remove('show');
+                        setTimeout(function () {
+                            popup.style.display = 'none';
+                        }, 350);
+                    }, 3000);
+                });
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
